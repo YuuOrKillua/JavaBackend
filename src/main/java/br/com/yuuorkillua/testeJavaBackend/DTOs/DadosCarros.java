@@ -1,10 +1,10 @@
 package br.com.yuuorkillua.testeJavaBackend.DTOs;
 
 import br.com.yuuorkillua.testeJavaBackend.Componentes.Carro;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.Setter;
 
 @Getter
@@ -12,9 +12,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DadosCarros {
-    @NonNull
+    @NotBlank
     private String nome;
-    @NonNull
+    @NotBlank
     private String marca;
     private int ano;
 

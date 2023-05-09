@@ -1,15 +1,23 @@
 package br.com.yuuorkillua.testeJavaBackend.Componentes;
 
-import io.micrometer.common.lang.NonNull;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
 public class Veiculo {
-    @NonNull
+    @NotBlank
     private String nome;
-    @NonNull
+    @NotBlank
     private String marca;
     private int ano;
+    
+    public Veiculo(@NotBlank String nome, @NotBlank String marca, int ano) {
+        this.nome = nome;
+        this.marca = marca;
+        this.ano = ano;
+    }
+
+    
 }
