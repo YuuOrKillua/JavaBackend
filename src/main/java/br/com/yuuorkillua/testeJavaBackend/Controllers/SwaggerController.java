@@ -10,15 +10,16 @@ import org.springframework.context.annotation.Configuration;
 @SuppressWarnings("unchecked")
 @Configuration
 public class SwaggerController{
-	@Bean
-	public GroupedOpenApi publicApi() {
+    @Bean
+    GroupedOpenApi publicApi() {
 		return GroupedOpenApi.builder()
 				.group("springshop-public")
 				.pathsToMatch("/public/**")
 				.build();
 	}
-	@Bean
-	public GroupedOpenApi adminApi() {
+
+    @Bean
+    GroupedOpenApi adminApi() {
 		return GroupedOpenApi.builder()
 				.group("springshop-admin")
 				.pathsToMatch("/admin/**")
