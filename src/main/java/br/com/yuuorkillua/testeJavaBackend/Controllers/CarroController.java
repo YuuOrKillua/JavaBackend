@@ -1,15 +1,15 @@
 package br.com.yuuorkillua.testeJavaBackend.Controllers;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-
-
-@Controller
+@RestController
+@RequestMapping("/carro")
 public class CarroController {
     
-    @RequestMapping("/Carro")
-    public String CarroURL() {
+    @GetMapping
+    public String CarroUrl () {
         return "Carro";
     }
     
