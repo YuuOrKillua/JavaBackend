@@ -1,11 +1,13 @@
 package br.com.yuuorkillua.testeJavaBackend.Componentes;
 
+import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
+@MappedSuperclass
 public class Veiculo {
     @NotBlank
     private String nome;
