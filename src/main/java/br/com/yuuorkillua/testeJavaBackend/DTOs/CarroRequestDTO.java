@@ -1,29 +1,25 @@
-package br.com.yuuorkillua.testeJavaBackend.Componentes;
+package br.com.yuuorkillua.testeJavaBackend.DTOs;
 
-import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Builder;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
-@Builder
-@MappedSuperclass
-public class Veiculo {
+public class CarroRequestDTO {
     @NotBlank
     private String nome;
     @NotBlank
-    private String marca;
+    private String marca; 
+    @NotNull
     private int ano;
-    
-    public Veiculo(@NotBlank String nome, @NotBlank String marca, int ano) {
+
+    public CarroRequestDTO(String nome, String marca, int ano){
         this.nome = nome;
         this.marca = marca;
         this.ano = ano;
     }
-
-    
 }
