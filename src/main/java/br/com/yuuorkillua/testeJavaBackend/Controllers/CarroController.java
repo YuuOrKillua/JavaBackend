@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 @RestController
-@RequestMapping(path = { "/carro" } )
+@RequestMapping(path = { "/carro" }, produces = { "application/json" })
 public class CarroController {
     
     @Autowired
@@ -26,7 +26,7 @@ public class CarroController {
 
     @Operation(summary = "cadastra um carro")
     @ApiResponse(responseCode = "201")
-    @PostMapping
+    @PostMapping(consumes = { "application/json" })
     public ResponseEntity<CarroResponseDTO> criartTipo(@RequestBody CarroRequestDTO novoCarro) {
         Carro carro = new Carro(novoCarro.getNome(), novoCarro.getMarca(), novoCarro.getAno());
         carroRepository.save(carro);
